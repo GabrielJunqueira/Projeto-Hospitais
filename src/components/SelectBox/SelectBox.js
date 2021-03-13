@@ -1,23 +1,43 @@
 import react from "react";
 import { NativeSelect } from "@material-ui/core";
-import { Select } from "@material-ui/core";
-import { InputLabel } from "@material-ui/core";
-import { MenuItem } from "@material-ui/core";
-import './SelectBox.css'
+import { Autocomplete } from "@material-ui/lab";
+import { TextField } from "@material-ui/core";
+import "./SelectBox.css";
 
 function SelectBox() {
   return (
-    <div className = "SelectionBox">
-      <InputLabel id="label">Tipo de Atendimento</InputLabel>
-      <Select id="select" value="100">
-        <MenuItem value="1">Atendimento 1</MenuItem>
-        <MenuItem value="2">Atendimento 2</MenuItem>
-        <MenuItem value="3">Atendimento 3</MenuItem>
-        <MenuItem value="4">Atendimento 4</MenuItem>
-        <MenuItem value="5">Atendimento 5</MenuItem>
-      </Select>
+    <div>
+      <div classname="SelectionBox">
+        <Autocomplete
+          className="inputPlanos"
+          id="combo-box-demo"
+          options={planosList}
+          getOptionLabel={(option) => option.plano}
+          style={{ width: 600 }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Selecione o seu plano de saúde"
+              variant="outlined"
+            />
+          )}
+        />
+      </div>
+      
     </div>
   );
 }
+
+const planosList = [
+  { plano: "Allianz" },
+  { plano: "Amil" },
+  { plano: "Bradesco" },
+  { plano: "Golden Cross" },
+  { plano: "MedSênior" },
+  { plano: "Promed" },
+  { plano: "Sulamerica" },
+  { plano: "Unimed" },
+  { plano: "Vitallis" },
+];
 
 export default SelectBox;
