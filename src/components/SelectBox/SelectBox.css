@@ -3,4 +3,21 @@
     background-color: black;
     border-color: brown;
     margin: 25%;
+    width: 100%;
+}
+
+.autoCampo{
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.searchButton{
+    display: flex;
+    size: 50%;
+    justify-content: center;
+    margin-top: 3%;
+    color: bisque;
 }

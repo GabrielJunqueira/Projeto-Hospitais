@@ -1,11 +1,15 @@
 import React from "react";
 import SelectBox from "../../components/SelectBox/SelectBox";
 
+
 function Inicio() {
   return (
     <div>
-      <h1>Inicio</h1>;
-      <SelectBox />
+    <h1>Inicio</h1>
+    <div className = "Container">
+        <SelectBox />
+      
+    </div>
     </div>
   );
 }

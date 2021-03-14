@@ -1,0 +1,9 @@
+.Container{
+    width: 100%;
+    margin: 25%;
+    background-color: brown !important;
+    display: flex;
+    justify-content: center;
+    border-color: red;
+    
+}
