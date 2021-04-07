@@ -1,16 +1,10 @@
 import react from "react";
+import Testes2 from "../Testes2/Testes2"
 
 function Testes(){
     return(
-        <div><h1>TESTES</h1>
-        <button onClick = {() =>clicou()}> CLICAAAA
-            </button>
-            </div>
+       <Testes2 person={pessoa}/>
     );
-}
-
-function clicou(){
-    console.log(pessoa.idade++);
 }
 
 const pessoa = {

@@ -1,19 +1,28 @@
-import react from "react";
+import React, { useState } from "react";
 import { Button, NativeSelect } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import { TextField } from "@material-ui/core";
 import "./SelectBox.css";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function SelectBox() {
+  const [plano, setPlano] = useState();
+  const [regiao, setRegiao] = useState();
+
   return (
     <div>
       <div classname="SelectionBox">
+        {/*selecionar região de BH*/}
         <div className="autoCampo">
           <Autocomplete
             className="inputPlanos"
             id="combo-box-demo"
+
+            plano={plano}
+            onChange={(event, newPlano) => {
+              setPlano(newPlano);
+            }}
+            
             options={planosList}
             getOptionLabel={(option) => option.plano}
             style={{ width: 600 }}
@@ -26,12 +35,20 @@ function SelectBox() {
             )}
           />
         </div>
+
+        {/*selecionar região de BH*/}
         <div className="autoCampo">
           <Autocomplete
             className="inputPlanos"
+            regiao={regiao}
+
+            onChange={(event, newRegiao) => {
+              setRegiao(newRegiao);
+            }}
             id="combo-box-demo"
             options={regionList}
             getOptionLabel={(option) => option.regiao}
+
             style={{ width: 600 }}
             renderInput={(params) => (
               <TextField
@@ -44,15 +61,21 @@ function SelectBox() {
         </div>
       </div>
       <div className="searchButton">
-      <Button
-        id="pesquisar"
-        className="btn btn-outline-danger"
-        to={{
-          pathname: "/consulta",
-        }}
-      >
-        Procurar Hospitais
-      </Button>
+        <Button
+          id="pesquisar"
+          className="btn btn-outline-danger"
+          to={{
+            pathname: "/consulta",
+          }}
+        >
+          Procurar Hospitais
+        </Button>
+      </div>
+      <div>
+        <p> {`plano: ${plano.plano}`}</p>  
+      </div>
+      <div>
+        <p>{`regiao: ${regiao.regiao}`}</p>
       </div>
     </div>
   );
