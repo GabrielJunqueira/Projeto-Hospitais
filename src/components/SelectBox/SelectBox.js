@@ -72,10 +72,10 @@ function SelectBox() {
         </Button>
       </div>
       <div>
-        <p> {`plano: ${plano.plano}`}</p>  
+     {/* <p> {`plano: ${plano.plano}`}</p>  
       </div>
       <div>
-        <p>{`regiao: ${regiao.regiao}`}</p>
+        <p>{`regiao: ${regiao.regiao}`}</p>  */}
       </div>
     </div>
   );
