@@ -72,10 +72,10 @@ function SelectBox() {
         </Button>
       </div>
       <div>
-        <p> {`plano: ${plano.plano}`}</p>  
+     { /*  <p> {`plano: ${plano.plano}`}</p>  */}
       </div>
       <div>
-        <p>{`regiao: ${regiao.regiao}`}</p>
+      { /*  <p>{`regiao: ${regiao.regiao}`}</p> */}
       </div>
     </div>
   );
@@ -91,6 +91,7 @@ const planosList = [
   { plano: "Sulamerica" },
   { plano: "Unimed" },
   { plano: "Vitallis" },
+  { plano: "SEM PLANO DE SAÚDE" }
 ];
 
 const regionList = [
